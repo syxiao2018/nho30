@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
 
     private void validatePassword(UserReq userReq){
         if(!UserUtils.isPasswordValidate(userReq.getPassword())){
-            throw new ValidationException("密码格式不正确");
+            throw new ValidationException("密码格式不正确，密码必须包含字母，数字，特殊符号中的两种，长度8-16");
         }
     }
 }
