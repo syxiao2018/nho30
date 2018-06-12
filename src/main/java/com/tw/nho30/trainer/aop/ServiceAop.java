@@ -1,6 +1,8 @@
 package com.tw.nho30.trainer.aop;
 
 import com.tw.nho30.trainer.aop.constant.Status;
+import com.tw.nho30.trainer.exception.LoginFailException;
+import com.tw.nho30.trainer.exception.ValidationException;
 import com.tw.nho30.trainer.vo.Result;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -35,6 +37,12 @@ public class ServiceAop {
 
         try {
             result = (Result<?>) proceedingJoinPoint.proceed();
+        } catch (ValidationException e) {
+            result.setMessage(e.getMessage());
+            result.setStatus(Status.FAIL);
+        } catch (LoginFailException e) {
+            result.setMessage(e.getMessage());
+            result.setStatus(Status.FAIL);
         } catch (Throwable e) {
             result.setStatus(Status.FAIL);
             result.setMessage("系统错误");
@@ -62,6 +70,7 @@ public class ServiceAop {
 
     /**
      * 忽略校验的路径
+     *
      * @param requestURI
      * @return
      */

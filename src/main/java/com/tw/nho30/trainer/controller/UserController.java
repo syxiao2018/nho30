@@ -26,14 +26,14 @@ public class UserController {
         this.userSevice = userService;
     }
 
-    @ApiOperation(tags = "用户", value = "用户注册", httpMethod = "POST", notes = "用户注册")
+    @ApiOperation(tags = "user", value = "用户注册", httpMethod = "POST", notes = "用户注册")
     @PostMapping("/register")
     public Result<User> register(@RequestBody UserReq userReq){
         User user = userSevice.register(userReq);
         return new Result<>(Status.OK, "", user);
     }
 
-    @ApiOperation(tags = "用户", value = "用户登陆", httpMethod = "POST", notes = "用户登陆")
+    @ApiOperation(tags = "user", value = "用户登陆", httpMethod = "POST", notes = "用户登陆")
     @PostMapping("/login")
     public Result<User> login(@RequestBody UserReq userReq, HttpServletRequest request){
         User user = userSevice.login(userReq);
