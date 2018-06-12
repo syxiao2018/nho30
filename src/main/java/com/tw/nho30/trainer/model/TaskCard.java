@@ -2,17 +2,18 @@ package com.tw.nho30.trainer.model;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class TrainerClam {
+public class TaskCard {
+
     private String id;
 
     private String name;
 
     private String description;
 
-    private int inNum;
+    private int status;
 
-    private List<TaskCard> taskCards;
+    private int score;
+
+    private String trainerClamId;
 }
