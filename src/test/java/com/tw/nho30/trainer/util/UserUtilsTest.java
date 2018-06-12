@@ -8,12 +8,15 @@ public class UserUtilsTest {
     @Test
     public void test_isPasswordValidate_true(){
         Assert.assertTrue(UserUtils.isPasswordValidate("passowrd124"));
+        Assert.assertTrue(UserUtils.isPasswordValidate("passowrd@#$"));
     }
 
     @Test
     public void test_isPasswordValidate_false(){
         Assert.assertFalse(UserUtils.isPasswordValidate(""));
         Assert.assertFalse(UserUtils.isPasswordValidate("123"));
+        Assert.assertFalse(UserUtils.isPasswordValidate("passwordpassword"));
+        Assert.assertFalse(UserUtils.isPasswordValidate("12345678900"));
         Assert.assertFalse(UserUtils.isPasswordValidate("password123password123"));
         Assert.assertFalse(UserUtils.isPasswordValidate(null));
     }
