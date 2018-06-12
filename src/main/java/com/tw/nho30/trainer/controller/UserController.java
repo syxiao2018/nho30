@@ -52,3 +52,4 @@ public class UserController {
         request.getSession().invalidate();
         return new Result<>(Status.OK, "", null);
     }
+}
