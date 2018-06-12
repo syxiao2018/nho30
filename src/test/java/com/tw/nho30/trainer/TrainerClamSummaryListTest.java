@@ -1,7 +1,7 @@
 package com.tw.nho30.trainer;
 
-import com.tw.nho30.trainer.vo.TrainerClamSummary;
 import com.tw.nho30.trainer.service.TrainerClamSummaryService;
+import com.tw.nho30.trainer.vo.TrainerClamSummary;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +21,7 @@ public class TrainerClamSummaryListTest {
     @Test
     public void should_return_all_clam_list() {
         List<TrainerClamSummary> clamSummaries = trainerClamSummaryService.queryAllList();
-        Assert.assertNotNull(clamSummaries);
+        Assert.assertEquals(5, clamSummaries.size());
     }
 
 }

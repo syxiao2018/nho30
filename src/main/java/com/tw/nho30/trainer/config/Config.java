@@ -1,5 +1,6 @@
 package com.tw.nho30.trainer.config;
 
+import com.tw.nho30.trainer.manage.TrainerClamManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -28,5 +29,10 @@ public class Config {
                 .termsOfServiceUrl("http://blog.csdn.net/saytime")
                 .version("1.0")
                 .build();
+    }
+
+    @Bean
+    public TrainerClamManager trainerClamManager(){
+        return new TrainerClamManager();
     }
 }
