@@ -1,4 +1,4 @@
-package com.tw.nho30.trainer.vo.voconverter;
+package com.tw.nho30.trainer.vo.converter;
 
 import com.tw.nho30.trainer.model.TaskCard;
 import com.tw.nho30.trainer.model.TrainerClam;
