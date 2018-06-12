@@ -1,5 +1,6 @@
 package com.tw.nho30.trainer.controller;
 
+import com.tw.nho30.trainer.aop.constant.Status;
 import com.tw.nho30.trainer.service.TrainerClamSummaryService;
 import com.tw.nho30.trainer.vo.Result;
 import com.tw.nho30.trainer.vo.TrainerClamSummary;
@@ -17,12 +18,12 @@ public class TrainerClamController {
     @Autowired
     private TrainerClamSummaryService trainerClamSummaryService;
 
-    @ApiOperation(tags = "训练营", value = "获取训练营列表信息", httpMethod = "GET", notes = "获取训练营列表信息")
+    @ApiOperation(tags = "trainer", value = "获取训练营列表信息", httpMethod = "GET", notes = "获取训练营列表信息")
     @GetMapping("/trainer")
     public Result<TrainerClamSummaryList> test(){
         List<TrainerClamSummary> trainerClamSummaries = trainerClamSummaryService.queryAllList();
         TrainerClamSummaryList result = new TrainerClamSummaryList();
         result.setClams(trainerClamSummaries);
-        return new Result<>("ok", null, result);
+        return new Result<>(Status.OK, null, result);
     }
 }

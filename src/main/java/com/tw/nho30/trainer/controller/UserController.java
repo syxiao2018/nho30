@@ -1,5 +1,6 @@
 package com.tw.nho30.trainer.controller;
 
+import com.tw.nho30.trainer.aop.constant.Status;
 import com.tw.nho30.trainer.model.User;
 import com.tw.nho30.trainer.req.UserReq;
 import com.tw.nho30.trainer.service.UserService;
@@ -23,12 +24,12 @@ public class UserController {
     @ApiOperation(tags = "用户", value = "用户注册", httpMethod = "POST", notes = "用户注册")
     @PostMapping("/register")
     public Result<User> register(@RequestBody UserReq user){
-        return new Result<>("SUCCESS", "", new User());
+        return new Result<>(Status.OK, "", new User());
     }
 
     @ApiOperation(tags = "用户", value = "用户登陆", httpMethod = "POST", notes = "用户登陆")
     @PostMapping("/login")
     public Result<User> login(@RequestBody UserReq user){
-        return new Result<>("SUCCESS", "", new User());
+        return new Result<>(Status.OK, "", new User());
     }
 }

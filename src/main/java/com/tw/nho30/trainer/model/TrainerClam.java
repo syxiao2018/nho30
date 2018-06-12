@@ -1,6 +1,5 @@
 package com.tw.nho30.trainer.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
