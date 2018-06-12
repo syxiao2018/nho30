@@ -1,6 +1,9 @@
-package com.tw.nho30.trainer.model;
+package com.tw.nho30.trainer.vo;
 
-public class TrainerClam {
+import lombok.Data;
+
+@Data
+public class TrainerClamSummary {
     /**
      * 唯一标示
      */
