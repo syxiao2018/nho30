@@ -40,7 +40,7 @@ public class UserController {
         return new Result<>(Status.OK, "", user);
     }
 
-    @ApiOperation(tags = "用户", value = "用户登陆", httpMethod = "POST", notes = "用户登陆")
+    @ApiOperation(tags = "user", value = "当前用户信息", httpMethod = "POST", notes = "当前用户信息")
     @GetMapping("/info")
     public Result<User> getCurrentUserInfo(HttpServletRequest request){
         return new Result<>(Status.OK, "", (User)request.getSession().getAttribute("user"));
