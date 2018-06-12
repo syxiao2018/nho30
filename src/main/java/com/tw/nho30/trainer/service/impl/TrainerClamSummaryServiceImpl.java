@@ -1,6 +1,8 @@
 package com.tw.nho30.trainer.service.impl;
 
+import com.tw.nho30.trainer.Dao.TaskCardDao;
 import com.tw.nho30.trainer.Dao.TrainerClamSummaryDao;
+import com.tw.nho30.trainer.model.TaskCard;
 import com.tw.nho30.trainer.model.TrainerClam;
 import com.tw.nho30.trainer.service.TrainerClamSummaryService;
 import com.tw.nho30.trainer.vo.TrainerClamSummary;
@@ -14,8 +16,12 @@ import java.util.Set;
 
 @Service
 public class TrainerClamSummaryServiceImpl implements TrainerClamSummaryService {
+
     @Autowired
     private TrainerClamSummaryDao trainerClamSummaryDao;
+
+    @Autowired
+    private TaskCardDao taskCardDao;
 
     @Override
     public List<TrainerClamSummary> queryAllList() {
@@ -28,5 +34,20 @@ public class TrainerClamSummaryServiceImpl implements TrainerClamSummaryService 
             result.add(vo);
         });
         return result;
+    }
+
+    @Override
+    public TrainerClam getByTrainerClamId(String trainerClamId){
+
+        TrainerClam trainerClam = trainerClamSummaryDao.getById(trainerClamId);
+        this.attachTaskCards(trainerClam);
+
+        return trainerClam;
+    }
+
+    private void attachTaskCards(TrainerClam trainerClam) {
+
+        List<TaskCard> taskCards = taskCardDao.getByTrainerClamId(trainerClam.getId());
+        trainerClam.setTaskCards(taskCards);
     }
 }
