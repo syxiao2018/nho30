@@ -42,4 +42,13 @@ public class UserController {
         SessionManager.addSession(request.getSession());
         return new Result<>(Status.OK, "", user);
     }
+
+    @ApiOperation(tags = "用户", value = "用户注销", httpMethod = "POST", notes = "用户注销")
+    @PostMapping("/logout")
+    public Result<User> logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return new Result<>(Status.OK, "", null);
+    }
+
+
 }

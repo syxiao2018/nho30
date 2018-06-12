@@ -1,6 +1,5 @@
 package com.tw.nho30.trainer.manage;
 
-import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import com.tw.nho30.trainer.model.User;
 
 import javax.servlet.http.HttpSession;
