@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class UserManager {
 
-    private static Map<Integer, User> userMap = new ConcurrentHashMap<>();
+    private static Map<Integer, User> userMap = new ConcurrentHashMap<>(16);
     private static int globalId = 1;
 
     public static User insert(User user){
