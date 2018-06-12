@@ -1,10 +1,9 @@
-package com.tw.nho30.trainer.model;
+package com.tw.nho30.trainer.req;
 
 import lombok.Data;
 
 @Data
-public class User {
-    private Integer id;
+public class UserReq {
     private String email;
     private String password;
 }

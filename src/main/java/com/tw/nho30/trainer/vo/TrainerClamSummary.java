@@ -1,11 +1,9 @@
-package com.tw.nho30.trainer.model;
+package com.tw.nho30.trainer.vo;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class TrainerClam {
+public class TrainerClamSummary {
     /**
      * 唯一标示
      */
@@ -30,6 +28,4 @@ public class TrainerClam {
      * 报名人数
      */
     private int inNum;
-
-    private List<TaskCard> taskCards;
 }
