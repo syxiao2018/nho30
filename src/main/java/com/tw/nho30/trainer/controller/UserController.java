@@ -46,7 +46,7 @@ public class UserController {
         return new Result<>(Status.OK, "", (User)request.getSession().getAttribute("user"));
     }
 
-    @ApiOperation(tags = "用户", value = "用户注销", httpMethod = "POST", notes = "用户注销")
+    @ApiOperation(tags = "user", value = "用户注销", httpMethod = "POST", notes = "用户注销")
     @PostMapping("/logout")
     public Result<User> logout(HttpServletRequest request){
         request.getSession().invalidate();
