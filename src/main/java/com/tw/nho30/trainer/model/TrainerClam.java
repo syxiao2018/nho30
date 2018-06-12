@@ -1,5 +1,10 @@
 package com.tw.nho30.trainer.model;
 
+import lombok.Data;
+
+
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,6 +35,8 @@ public class TrainerClam {
      * 报名人数
      */
     private int inNum;
+
+    private List<TaskCard> taskCards;
 
     public TrainerClam(String id, String name, String summary, String startDate, int inNum) {
         this.id = id;

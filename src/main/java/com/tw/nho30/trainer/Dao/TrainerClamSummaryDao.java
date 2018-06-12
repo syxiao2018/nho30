@@ -10,4 +10,6 @@ public interface TrainerClamSummaryDao {
      * @return
      */
     Set<TrainerClam> queryAll();
+
+    TrainerClam getById(String id);
 }

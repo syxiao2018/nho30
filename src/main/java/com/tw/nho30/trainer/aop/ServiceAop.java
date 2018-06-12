@@ -1,6 +1,7 @@
 package com.tw.nho30.trainer.aop;
 
 import com.tw.nho30.trainer.aop.constant.Status;
+import com.tw.nho30.trainer.controller.exception.IllegalRequestArgumentException;
 import com.tw.nho30.trainer.exception.LoginFailException;
 import com.tw.nho30.trainer.exception.ValidationException;
 import com.tw.nho30.trainer.vo.Result;
@@ -37,6 +38,9 @@ public class ServiceAop {
 
         try {
             result = (Result<?>) proceedingJoinPoint.proceed();
+        } catch (IllegalRequestArgumentException e) {
+            result.setMessage(e.getMessage());
+            result.setStatus(Status.FAIL);
         } catch (ValidationException e) {
             result.setMessage(e.getMessage());
             result.setStatus(Status.FAIL);
