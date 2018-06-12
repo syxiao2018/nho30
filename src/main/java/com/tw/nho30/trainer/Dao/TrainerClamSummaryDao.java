@@ -1,13 +1,13 @@
 package com.tw.nho30.trainer.Dao;
 
-import com.tw.nho30.trainer.vo.TrainerClamSummary;
+import com.tw.nho30.trainer.model.TrainerClam;
 
-import java.util.List;
+import java.util.Set;
 
 public interface TrainerClamSummaryDao {
     /**
      * 查询所有的训练营
      * @return
      */
-    List<TrainerClamSummary> queryAll();
+    Set<TrainerClam> queryAll();
 }
