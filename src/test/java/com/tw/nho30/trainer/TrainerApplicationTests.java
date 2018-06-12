@@ -10,7 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TrainerApplicationTests {
 
     @Test
-    public void contextLoads() {
+    public void fizz_correct_test() {
+
+
     }
 
 }
