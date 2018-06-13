@@ -35,6 +35,9 @@ public class UserServiceImpl implements UserService {
     public User login(UserReq userReq) {
         User user = userDao.findByEmail(userReq.getEmail());
         if(user == null || !user.getPassword().equals(userReq.getPassword())){
+            if(user != null){
+                LockManager.addLock(user.getId());
+            }
             throw new LoginFailException("账号或密码错误");
         }
         if(LockManager.isLocked(user.getId())){

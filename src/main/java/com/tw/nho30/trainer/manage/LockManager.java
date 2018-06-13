@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class LockManager {
     private static final Map<Integer, ErrorTimes> ERROR_TIMES = new ConcurrentHashMap<>();
-    private static final int ERROR_SPACE = 600 * 1000;
+    private static final int ERROR_SPACE = 3600 * 1000;
 
     public static boolean isLocked(Integer userId){
         ErrorTimes times = ERROR_TIMES.get(userId);
