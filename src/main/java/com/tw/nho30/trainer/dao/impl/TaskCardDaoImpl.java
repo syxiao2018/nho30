@@ -1,6 +1,6 @@
-package com.tw.nho30.trainer.Dao.impl;
+package com.tw.nho30.trainer.dao.impl;
 
-import com.tw.nho30.trainer.Dao.TaskCardDao;
+import com.tw.nho30.trainer.dao.TaskCardDao;
 import com.tw.nho30.trainer.model.TaskCard;
 import org.springframework.stereotype.Repository;
 

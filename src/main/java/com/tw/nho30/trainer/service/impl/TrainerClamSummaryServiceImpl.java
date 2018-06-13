@@ -1,7 +1,7 @@
 package com.tw.nho30.trainer.service.impl;
 
-import com.tw.nho30.trainer.Dao.TaskCardDao;
-import com.tw.nho30.trainer.Dao.TrainerClamSummaryDao;
+import com.tw.nho30.trainer.dao.TaskCardDao;
+import com.tw.nho30.trainer.dao.TrainerClamSummaryDao;
 import com.tw.nho30.trainer.model.TaskCard;
 import com.tw.nho30.trainer.model.TrainerClam;
 import com.tw.nho30.trainer.service.TrainerClamSummaryService;
