@@ -3,6 +3,7 @@ package com.tw.nho30.trainer.service.impl;
 import com.tw.nho30.trainer.dao.UserDao;
 import com.tw.nho30.trainer.exception.LoginFailException;
 import com.tw.nho30.trainer.exception.ValidationException;
+import com.tw.nho30.trainer.manage.LockManager;
 import com.tw.nho30.trainer.model.User;
 import com.tw.nho30.trainer.req.UserReq;
 import com.tw.nho30.trainer.service.UserService;
@@ -34,7 +35,10 @@ public class UserServiceImpl implements UserService {
     public User login(UserReq userReq) {
         User user = userDao.findByEmail(userReq.getEmail());
         if(user == null || !user.getPassword().equals(userReq.getPassword())){
-            throw new LoginFailException("invalidate account");
+            throw new LoginFailException("账号或密码错误");
+        }
+        if(LockManager.isLocked(user.getId())){
+            throw new LoginFailException("账号被锁定");
         }
         return user;
     }
@@ -42,6 +46,9 @@ public class UserServiceImpl implements UserService {
     private void validateEmail(UserReq userReq){
         if(!UserUtils.isEmailValidate(userReq.getEmail())){
             throw new ValidationException("邮箱格式不正确");
+        }
+        if(userDao.findByEmail(userReq.getEmail()) != null){
+            throw new ValidationException("邮箱已经注册");
         }
     }
 
