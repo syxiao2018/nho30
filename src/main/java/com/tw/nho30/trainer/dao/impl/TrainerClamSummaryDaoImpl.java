@@ -17,8 +17,7 @@ public class TrainerClamSummaryDaoImpl implements TrainerClamSummaryDao {
 
     @Override
     public Set<TrainerClam> queryAll() {
-        Set<TrainerClam> data = trainerClamManager.getTrainerClams();
-        return data;
+        return trainerClamManager.getTrainerClams();
     }
 
     @Override
