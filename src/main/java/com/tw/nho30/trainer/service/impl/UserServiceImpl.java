@@ -1,9 +1,8 @@
 package com.tw.nho30.trainer.service.impl;
 
-import com.tw.nho30.trainer.Dao.UserDao;
+import com.tw.nho30.trainer.dao.UserDao;
 import com.tw.nho30.trainer.exception.LoginFailException;
 import com.tw.nho30.trainer.exception.ValidationException;
-import com.tw.nho30.trainer.manage.UserManager;
 import com.tw.nho30.trainer.model.User;
 import com.tw.nho30.trainer.req.UserReq;
 import com.tw.nho30.trainer.service.UserService;

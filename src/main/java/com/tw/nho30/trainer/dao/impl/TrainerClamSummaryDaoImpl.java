@@ -1,6 +1,6 @@
-package com.tw.nho30.trainer.Dao.impl;
+package com.tw.nho30.trainer.dao.impl;
 
-import com.tw.nho30.trainer.Dao.TrainerClamSummaryDao;
+import com.tw.nho30.trainer.dao.TrainerClamSummaryDao;
 import com.tw.nho30.trainer.manage.TrainerClamManager;
 import com.tw.nho30.trainer.model.TrainerClam;
 import org.springframework.beans.factory.annotation.Autowired;
