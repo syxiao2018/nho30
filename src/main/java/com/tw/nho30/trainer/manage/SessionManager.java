@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManager {
-    private static Map<String, HttpSession> SESSION_MAP = new ConcurrentHashMap<>(64);
+    private static final Map<String, HttpSession> SESSION_MAP = new ConcurrentHashMap<>(64);
 
     public static void addSession(HttpSession session) {
         SESSION_MAP.put(session.getId(), session);
@@ -27,7 +27,9 @@ public class SessionManager {
             if (user == null) {
                 continue;
             }
-            session.invalidate();
+            if(user.getId() == userId){
+                session.invalidate();
+            }
         }
     }
 }

@@ -33,11 +33,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(UserReq userReq) {
         User user = userDao.findByEmail(userReq.getEmail());
-        if(user == null){
-            throw new LoginFailException("用户不存在");
-        }
-        if(!user.getPassword().equals(userReq.getPassword())){
-            throw new LoginFailException("密码错误");
+        if(user == null || !user.getPassword().equals(userReq.getPassword())){
+            throw new LoginFailException("invalidate account");
         }
         return user;
     }
