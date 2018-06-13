@@ -28,13 +28,15 @@ public class TrainerClamManager {
                 "小学数学领跑者",
                 "2018-06-22",
                 52);
+        t1.setDesc("我是 数学精英 详情.");
         trainerClams.add(t1);
 
         TrainerClam t2 = new TrainerClam("2",
                 "英语王者",
-                "欲带皇冠,必报该班",
+                "欲带王冠,必报该班",
                 "2018-08-12",
                 62);
+        t2.setDesc("我是 英语王者 详情.");
         trainerClams.add(t2);
 
         TrainerClam t3 = new TrainerClam("3",
