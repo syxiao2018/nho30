@@ -32,7 +32,7 @@ public class TrainerClamController {
         return new Result<>(Status.OK, null, result);
     }
 
-    @ApiOperation(tags = "训练营详细", value = "获取训练营详细信息", httpMethod = "GET", notes = "获取训练营列表详细信息")
+    @ApiOperation(tags = "trainerDetail", value = "获取训练营详细信息", httpMethod = "GET", notes = "获取训练营列表详细信息")
     @GetMapping("trainer/{trainerClamId}")
     public Result<TrainerClamDetailVO> trainerClamDetail(@PathVariable("trainerClamId") String trainerClamId) {
 
