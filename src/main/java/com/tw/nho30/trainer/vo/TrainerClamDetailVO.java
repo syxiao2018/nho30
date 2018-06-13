@@ -28,6 +28,8 @@ public class TrainerClamDetailVO {
      */
     private String summary;
 
+    private String desc;
+
     /**
      * 开课时间
      */

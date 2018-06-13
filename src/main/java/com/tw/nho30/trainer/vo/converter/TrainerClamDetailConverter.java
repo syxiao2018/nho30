@@ -16,6 +16,7 @@ public class TrainerClamDetailConverter {
         vo.setName(source.getName());
         vo.setStartDate(source.getStartDate());
         vo.setSummary(source.getSummary());
+        vo.setDesc(source.getDesc());
         vo.setTaskCards(source.getTaskCards().stream().map(TrainerClamDetailConverter::from).collect(Collectors.toList()));
 
         return vo;

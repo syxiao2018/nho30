@@ -36,6 +36,8 @@ public class TrainerClam {
      */
     private int inNum;
 
+    private String desc;
+
     private List<TaskCard> taskCards;
 
     public TrainerClam(String id, String name, String summary, String startDate, int inNum) {
