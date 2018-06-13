@@ -55,11 +55,6 @@ public class ServiceAop {
         return result;
     }
 
-    /**
-     * 校验请求者是否登陆
-     *
-     * @return
-     */
     private boolean isLogin() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -72,12 +67,6 @@ public class ServiceAop {
         return request.getSession().getAttribute("user") != null;
     }
 
-    /**
-     * 忽略校验的路径
-     *
-     * @param requestURI
-     * @return
-     */
     private boolean ignoreCheckLogin(String requestURI) {
         Pattern pattern = Pattern.compile(IGNORE_CHECK);
         Matcher matcher = pattern.matcher(requestURI);
